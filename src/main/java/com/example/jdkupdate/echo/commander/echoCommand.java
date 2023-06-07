@@ -8,7 +8,11 @@ import org.springframework.shell.standard.ShellOption;
 public class echoCommand {
     @ShellMethod(key = {"echo"}, value = "Welcome to junnyland")
     void echo(
-            @ShellOption(value = {"-w","wide"}, defaultValue = "Welcome to junnyland") String welcome
+            @ShellOption(
+                    help = "-w {input message}",
+                    value = {"-w","wide"},
+                    defaultValue = "Welcome to junnyland")
+            String welcome
     ) {
         System.out.println(welcome);
     }
